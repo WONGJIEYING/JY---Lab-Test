@@ -116,7 +116,10 @@ class WelcomeScreen extends StatelessWidget {
             SizedBox(height: 20),
             Text(
               'Welcome $username',
-              style: TextStyle(fontSize: 24),
+              style: TextStyle(
+                fontSize: 30, // Change the font size
+                color: Colors.black, // Change the font color
+              ),
             ),
           ],
         ),
