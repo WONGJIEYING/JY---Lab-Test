@@ -118,6 +118,7 @@ class WelcomeScreen extends StatelessWidget {
               'Welcome $username',
               style: TextStyle(
                 fontSize: 30, // Change the font size
+                fontWeight: FontWeight.bold,
                 color: Colors.black, // Change the font color
               ),
             ),
