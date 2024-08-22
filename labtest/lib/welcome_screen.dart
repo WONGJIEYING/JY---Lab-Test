@@ -15,7 +15,7 @@ class WelcomeScreen extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.logout),
             onPressed: () async {
-              // 弹出确认对话框
+              // Show a confirmation dialog
               bool confirm = await showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
@@ -35,11 +35,11 @@ class WelcomeScreen extends StatelessWidget {
                   ) ??
                   false;
 
-              // 如果用户确认，执行注销操作
+              // If the user confirms, perform the sign-out operation
               if (confirm) {
                 await AuthServices().signOut();
-                Navigator.of(context)
-                    .popUntil((route) => route.isFirst); // 返回到登录页面
+                Navigator.of(context).popUntil((route) =>
+                    route.isFirst); // Navigate back to the login screen
               }
             },
           ),
@@ -57,10 +57,10 @@ class WelcomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // 显示从 Firebase Storage 加载的图片
+              // Display an image loaded from Firebase Storage
               Image.network(
                 'https://firebasestorage.googleapis.com/v0/b/labtest-acdfa.appspot.com/o/storage.jpg?alt=media&token=d6856c06-4650-4cb8-9f80-97608224c80b',
-                height: 150, // 设置图片高度
+                height: 150, // Set the height of the image
               ),
               SizedBox(height: 20),
               Icon(
